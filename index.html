@@ -5,22 +5,72 @@
     <link rel="stylesheet" href="styles.css">
     <title>home</title>
 </head>
+<header id="header">
+</header>
 <body>
-<h1 id="logo">Melesi Codes</h1>
-<div id="wrapper">
-    <div id="passwordHolder">
-        <h1 id="password">Generate Strong Passwords</h1>
+<div class="wrapper">
+    <aside class="desktop-left">
+    <div class="side-head">
+        <h1>Set parameters</h1>
     </div>
-    <div id="controls">
-        <div id="settings">
-            <input type="number" name="length" id="passwordLength" placeholder="password length" value="10">
-            <input type="text" name="title" id="passwordTitle" placeholder="For?(optional)">
-            <input type="email" name="email" id="myEmail" placeholder="email(optional)">
+
+    <div class="side-body">
+
+    <div class="parameters">
+        <div class="input">
+            <label for="length">Numbers</label>
+            <input type="number" name="length" id="length" value="10">
         </div>
-        <div id="buttons">
-            <button id="generate" class="main-btn">Generate</button>
-            <button id="save" class="main-btn">Save</button>
-            <button id="restore" class="main-btn">Email</button>
+
+        <div class="input">
+            <label for="includeNumbers">Numbers</label>
+            <input type="checkbox" name="includeNumbers" id="includeNumbers" checked>
+        </div>
+
+        <div class="input">
+            <label for="alphabets">Alphabets</label>
+            <input type="checkbox" name="alphabets" id="alphabets" checked>
+        </div>
+
+        <div class="input">
+            <label for="specialChars">Special Characters</label>
+            <input type="checkbox" name="specialChars" id="specialChars" checked>
+        </div>
+    </div>
+
+    <div class="aside-button">
+        <input id="selectAll" type="button" value="select all">
+    </div>
+    <br/>
+    <div class="personal">
+        <div class="side-personal">
+            <h1>Personal data</h1>
+        </div>
+        <div class="title-input">
+            <label for="yourReason">Title</label>
+            <input class="personal-input" type="text" name="yourReason" id="yourReason" placeholder="password name">
+
+        </div>
+        <div class="email-input">
+            <label for="yourEmail">Email</label>
+            <input class="personal-input" type="email" name="yourEmail" id="yourEmail" placeholder="Email to send to">
+        </div>
+    </div>
+    </div>
+
+    <div class="side-footer">
+        <input type="button" value='GENERATE' id="generate">
+        <input type="button" value='ADD NOTE' id="addNote">
+    </div>
+</aside>
+    <div id="main">
+        <div class="main-head">
+            <h1 class="message">Generate Secured Password</h1>
+        </div>
+        <div class="main-body">
+            <div class="bubble">
+                <h1 id="GeneratedPassword">0000000000000000000000000</h1>
+            </div>
         </div>
     </div>
 </div>

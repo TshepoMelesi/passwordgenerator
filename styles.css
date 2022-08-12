@@ -4,97 +4,219 @@
 
     box-sizing: border-box;
 
-    font-size: 20px;
+    font-size: 16px;
+    font-family: Orbitron, SansSerif;
 }
+*:root{
+    --dark-color-1: hsl(260, 5%, 15%, 1);
+    --dark-color-2: hsl(300, 34%, 36%, 0.37);
 
+    --mid-color-1: hsl(240, 100%, 50%, 0.5);
+    --mid-color-2: hsl(301, 100%, 36%, 0.5);
+
+    --light-color-1: hsl(240, 100%, 50%, 1);
+    --light-color-2: hsl(301, 100%, 36%, 1);
+
+    --nav-height: 3rem;
+    --gap-1: 0.8rem;
+    --gap-2: 0.4rem;
+}
+header{
+    width: 100vw;
+    height: var(--nav-height);
+
+    background-color: var(--light-color-2);
+
+    display: flex;
+    justify-content: center;
+
+    overflow: hidden;
+}
+header .container {
+    width: 90%;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    background-color: inherit;
+
+    padding-bottom: 0.5rem;
+}
+header .container .navigator ul{
+    display: flex;
+
+    list-style: none;
+}
+header .container .navigator ul li a{
+    text-decoration: none;
+
+    color: var(--dark-color-1);
+    font-size: 1.2rem;
+
+    padding: 0.5rem 0.7rem;
+
+    transition: opacity 150ms ease-in-out;
+}
+header .container .navigator ul li a:hover{
+    opacity: 0.5;
+}
+.logo h1{
+    font-size: 1.5rem;
+
+    color: var(--dark-color-1);
+}
 body{
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - var(--nav-height));
 
-    background-color: darkblue;
+    background-color: var(--dark-color-1);
+
+    position: relative;
+}
+.wrapper{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+
+    background-color: inherit;
+}
+aside{
+    line-height: 1.3rem;
+
+    min-width: 250px;
+    width: 40%;
+    max-width: 300px;
+    height: 100%;
+
+    display: grid;
+    grid-template-rows: 2rem auto calc(max(2rem, var(--gap-1)));
+
+    background-color: var(--mid-color-2);
+
+    padding: 1rem 1.2rem;
+}
+.side-head{
+    margin-bottom: var(--gap-1);
+}
+aside .input{
+    display: flex;
+    justify-content: space-between;
+}
+.personal-input{
+    background-color: var(--light-color-2);
+
+    border: 0;
+    height: 1.5rem;
+    width: 80%;
+    max-width: 10rem;
+
+    color: black;
+
+    margin-bottom: 0.5rem;
+    padding: 0 1rem;
+}
+.side-personal{
+    margin-bottom: var(--gap-1);
+}
+#length{
+    max-width: 3rem;
+    font-size: 0.8rem;
+}
+::-webkit-input-placeholder{
+    color: var(--dark-color-1);
+
+    /*font-size: 80%;*/
+}
+.aside-button{
+    width: 100%;
+
+    margin-top: calc(var(--gap-1)/2);
+
+    display: flex;
+    justify-content: center;
+}
+#selectAll{
+    width: 80%;
+
+    background-color: var(--light-color-2);
+    border:0;
+
+    text-transform: lowercase;
+    border-radius: 1rem;
+}
+.email-input, .title-input{
+    display: flex;
+    justify-content: space-between;
+}
+#yourEmail, #yourReason{
+    font-size: 80%;
+    border:0;
+    outline: 0;
+}
+.side-footer{
+    width: 100%;
+    height: 3rem;
+
+    display: grid;
+    grid-template-columns: repeat(2, calc(50% - var(--gap-2)/2));
+    gap: var(--gap-2)
+}
+.side-footer input{
+    border: 0;
+
+    background-color: var(--light-color-2);
+}
+#main{
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#main .main-head{
+    width: 100%;
+    height: 20%;
+
+    background-color: inherit;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
 }
-#logo{
-    position: absolute;
-    top: 2.5rem;
+#main .main-head .message{
+    font-size: 2.5rem;
 
-    color: rgba(0, 0, 0, 0.21);
-    font-size: 5rem;
+    text-transform: uppercase;
 }
-
-#wrapper{
-    width: 70%;
-    height: 50%;
-
-    /*border: 2px red solid;*/
-    border-radius: 1rem;
-
-    background-color: royalblue;
-
-    padding: 1rem;
-
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: auto 4rem;
-}
-#passwordHolder{
+#main .main-body{
+    padding: 0 3rem;
+    height: 65%;
     width: 100%;
-    overflow: hidden;
+
+    background-color: inherit;
 }
-#password{
-    font-size: 2rem;
-    text-align: center;
-}
-#controls {
-    border-top: 0.1rem rgba(0, 0, 0, 0.62) solid;
-    padding-top: 0.3rem;
+#main .main-body .bubble{
+    width: 100%;
+    min-height: 30%;
+
     display: flex;
     flex-direction: column;
-}
-#buttons {
-    width: 100%;
+    align-items: center;
 
-    display: grid;
-    grid-template-rows: 100%;
-    grid-template-columns: repeat(3, 1fr);
-}
-#generate, #save, #restore {
-    height: 2.5rem;
+    border-radius: 5rem;
 
-    border:0;
+    padding: 2rem 3rem;
+
+    background-color: inherit;
 }
-#generate{
-    border-top-left-radius: 1rem;
-    border-bottom-left-radius: 1rem;
+#GeneratedPassword{
+    font-size: 1.7rem;
+
+    color: var(--light-color-2)
 }
-#restore {
-    border-top-right-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-}
-.main-btn{
-    margin-top: 0.2rem;
-    transition: background-color 250ms ease-in-out;
-}
-.main-btn:hover{
-    background-color: blue;
-}
-#passwordLength {
-    width: 3rem;
-}
-#passwordTitle{
-    width: 7rem;
-    margin-left: 0.2rem;
-}
-#myEmail{
-    width: 7rem;
-    margin-left: 0.2rem;
-}
-#settings{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
+
+
